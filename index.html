@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Checkout mockup</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-info container">
+        <div class="header">
+          <h1>Let´s make a payment!</h1>
+          <h2>
+            to start your subscription, input your card details to make a
+            payment. you will be redirected to your banks authorization page.
+          </h2>
+        </div>
+        <div class="card-details-container">
+          <div class="name-input">
+            <label for="name">Cardholders´s Name</label>
+            <input
+              class="field"
+              type="text"
+              pattern="^[a-zA-Z\s]+$"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="card-Number input">
+            <label for="card-number">Card Number</label>
+            <div class="input-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-credit-card"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"
+                />
+                <path
+                  d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                />
+              </svg>
+              <input
+                class="field"
+                type="tel"
+                id="card-number"
+                inputmode="numeric"
+                pattern="[0-9]{16}"
+                autocomplete="cc-number"
+                maxlength="16"
+                name="card-number"
+                placeholder="0000 0000 0000 0000"
+              />
+            </div>
+          </div>
+          <div class="expiry input">
+            <label for="expiry-date">Expiry</label>
+            <div class="input-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-calendar"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                />
+              </svg>
+              <input
+                class="field"
+                type="text"
+                onfocus="this.type='date'"
+                onblur="this.type='text'"
+                id="date"
+                name="date"
+                placeholder=" mm / dd / yy "
+              />
+            </div>
+          </div>
+          <div class="CVC input">
+            <label for="CVC-Input">CVC</label>
+            <div class="input-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-calendar"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                />
+              </svg>
+              <input
+                class="field"
+                type="tel"
+                inputmode="numeric"
+                pattern="[0-9]{3}"
+                id="CVC"
+                name="cvc"
+                maxlength="3"
+                placeholder="XXX"
+                required
+              />
+            </div>
+          </div>
+          <div class="discount-code input">
+            <label for="discount-code">Discount Code</label>
+            <div class="input-container">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-calendar"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                />
+              </svg>
+              <input
+                class="field"
+                type="text"
+                id="discount-code"
+                maxlength="10"
+                name="discount-code"
+                placeholder="Enter Discount Code"
+              />
+              <button
+                class="discount-button"
+                type="button"
+                onclick="applyDiscount()"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+          <button
+            class="payment-button"
+            type="button"
+            onclick="applyDiscount()"
+          >
+            Apply
+          </button>
+        </div>
+      </div>
+      <div class="product-info container">
+        <div class="payment-details">
+          <div class="payment-details-card">
+            <div class="total">
+              <p class="product-header">you´re paying</p>
+              <h2>$450.00</h2>
+            </div>
+            <div class="product-details">
+              <div class="product one">
+                <div class="name">
+                  <h3>Custom Gucci Shoes</h3>
+                </div>
+                <div class="price">
+                  <h3>$ 400.00</h3>
+                </div>
+                <div class="size">
+                  <p>Size: m Color: Red</p>
+                </div>
+              </div>
+              <div class="product two">
+                <div class="name">
+                  <h3>Nivea Cream 400ml</h3>
+                </div>
+                <div class="price">
+                  <h3>$ 50.00</h3>
+                </div>
+                <div class="size">
+                  <p>Size: m Color: Blue</p>
+                </div>
+              </div>
+              <div class="product discount">
+                <div class="title">
+                  <h3>Discounts & offers</h3>
+                </div>
+                <div class="price">
+                  <h3>$ 0.00</h3>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="product tax">
+              <div class="title">
+                <h3>Tax</h3>
+              </div>
+              <div class="price">
+                <h3>$450.00</h3>
+              </div>
+            </div>
+            <div class="product total">
+              <div class="title">
+                <h3>Total</h3>
+              </div>
+              <div class="price">
+                <h3>$450.00</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
